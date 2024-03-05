@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <%- include('../partials/fontawesome') %>
+    <link rel="stylesheet" href="/css/errorPage.css" />
+  </head>
+  <body>
+    <div class="errorWrapper">
+      <h1>Error</h1>
+      <i style="color: black" class="fas fa-exclamation-circle"></i>
+      <p>
+        <!-- prettier-ignore -->
+        <% if (message.includes('getaddrinfo ENOTFOUND ac-9cbfzvz') ) { %>
+          
+         Connection error; to resolve this issue, try:
+         <ul>
+            <li>Refreshing the page</li>
+            <li>Reconnecting to Wi-Fi</li>
+            <li>Checking the network cables, modem, and router</li>
+         </ul>
+         <% } else if (message === 'querySrv ETIMEOUT _mongodb._tcp.fullstack-blog-v1.s18gmrr.mongodb.net') { %>
+          Request timeout; to resolve this issue, try:
+          <ul>
+             <li>Refreshing the page</li>
+             <li>Reconnecting to Wi-Fi</li>
+             <li>Checking the network cables, modem, and router</li>
+          </ul>
+         <% } else { %>
+            <%= message %>
+            <%}  %>
+      </p>
+      <a href="/">Go to Home</a>
+    </div>
+  </body>
+</html>

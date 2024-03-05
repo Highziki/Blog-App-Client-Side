@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fontawesome -->
+    <%- include('../partials/fontawesome') %>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/form.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <!-- icon -->
+      <h1>
+        Add Post
+
+        <!-- add icon -->
+        <i class="fas fa-plus"></i>
+      </h1>
+      <small class="error">
+        <i class="fas fa-exclamation-circle"></i>
+        Invalid Credentials
+      </small>
+      <form action="/login" method="POST">
+        <!-- Post Title -->
+        <div class="input-wrapper">
+          <label for="name">Post Title</label>
+          <input type="text" name="title" id="name" />
+          <!-- err -->
+        </div>
+
+        <!-- Category -->
+        <div class="input-wrapper">
+          <label for="category">Category</label>
+          <select name="category" id="category">
+            <option value="1">Web Development</option>
+            <option value="2">Tech Gadgets</option>
+            <option value="3">Business</option>
+            <option value="4">Health & Wellness</option>
+          </select>
+          <!-- err -->
+        </div>
+        <div class="input-wrapper">
+          <!-- Post Body -->
+          <label for="body">Post Body</label>
+          <textarea name="body" id="body" cols="30" rows="10"></textarea>
+          <!-- err -->
+        </div>
+        <!-- Post Image -->
+        <div class="input-wrapper">
+          <label for="image">Post Image</label>
+          <input type="file" name="image" id="image" />
+          <!-- err -->
+        </div>
+
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </body>
+</html>
